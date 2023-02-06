@@ -1,4 +1,4 @@
-import { createContext } from "vm";
+import { createContext } from "react";
 import { CharactersStructure } from "../../../data/types";
 import { CharactersAction } from "../../actions/characters/types";
 
