@@ -8,7 +8,7 @@ export interface CharacterStructure {
   location: string;
 }
 
-type CharactersStructure = CharacterStructure[];
+export type CharactersStructure = CharacterStructure[];
 
 export interface CharactersApiStructure {
   info: {
