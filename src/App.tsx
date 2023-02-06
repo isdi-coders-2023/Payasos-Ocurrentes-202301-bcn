@@ -1,7 +1,7 @@
-import "./App.css";
+import GlobalStyle from "./globalStyles";
 
 const App = (): JSX.Element => {
-  return <div></div>;
+  return <GlobalStyle />;
 };
 
 export default App;
