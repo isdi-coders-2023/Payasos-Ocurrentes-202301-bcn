@@ -12,7 +12,8 @@ const characterReducer = (
   let newCharacters: CharactersStructure;
 
   if (action.type === CharactersActionType.loadCharacters) {
-    return (newCharacters = [...(action as LoadCharactersAction).payload]);
+    newCharacters = [...(action as LoadCharactersAction).payload];
+    return newCharacters;
   } else {
     newCharacters = currentCharacters;
     return newCharacters;

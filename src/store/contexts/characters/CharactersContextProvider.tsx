@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useMemo, useReducer } from "react";
 import characterReducer from "../../reducers/characters/charactersReducer";
 import CharactersContext from "./CharactersContext";
 
@@ -11,8 +11,13 @@ const CharactersContextProvider = ({
 }: CharactersContextProviderProps): JSX.Element => {
   const [characters, dispatch] = useReducer(characterReducer, []);
 
+  const store = useMemo(
+    () => ({ characters, dispatch }),
+    [characters, dispatch]
+  );
+
   return (
-    <CharactersContext.Provider value={{ characters, dispatch }}>
+    <CharactersContext.Provider value={store}>
       {children}
     </CharactersContext.Provider>
   );
