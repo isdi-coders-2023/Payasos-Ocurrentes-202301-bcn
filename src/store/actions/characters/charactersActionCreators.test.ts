@@ -14,6 +14,7 @@ describe("Given a charactersActionCreator", () => {
           gender: "",
           origin: { name: "" },
           location: { name: "" },
+          image: "",
         },
         {
           id: 2,
@@ -23,6 +24,7 @@ describe("Given a charactersActionCreator", () => {
           gender: "",
           origin: { name: "" },
           location: { name: "" },
+          image: "",
         },
       ];
 
