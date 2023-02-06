@@ -13,7 +13,7 @@ export interface CharacterStructure {
   image: string;
 }
 
-type CharactersStructure = CharacterStructure[];
+export type CharactersStructure = CharacterStructure[];
 
 export interface CharactersApiStructure {
   info: {
