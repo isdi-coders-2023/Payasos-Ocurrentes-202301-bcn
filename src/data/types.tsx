@@ -4,8 +4,8 @@ export interface CharacterStructure {
   status: string;
   species: string;
   gender: string;
-  origin: string;
-  location: string;
+  origin: { name: string };
+  location: { name: string };
 }
 
 export type CharactersStructure = CharacterStructure[];
