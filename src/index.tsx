@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import GlobalStyles from "./GlobalStyles";
 import CharactersContextProvider from "./store/contexts/characters/CharactersContextProvider";
 
 const root = ReactDOM.createRoot(
@@ -10,6 +11,7 @@ root.render(
   <React.StrictMode>
     <CharactersContextProvider>
       <App />
+      <GlobalStyles />
     </CharactersContextProvider>
   </React.StrictMode>
 );
