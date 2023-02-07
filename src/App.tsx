@@ -6,7 +6,7 @@ const App = (): JSX.Element => {
 
   useEffect(() => {
     getCharactersApi();
-  });
+  }, [getCharactersApi]);
 
   return <div></div>;
 };
