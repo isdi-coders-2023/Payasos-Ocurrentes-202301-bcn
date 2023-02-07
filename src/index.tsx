@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import HomePage from "./components/HomePage/HomePage";
 import GlobalStyles from "./GlobalStyles";
 import CharactersContextProvider from "./store/contexts/characters/CharactersContextProvider";
 
@@ -11,6 +12,7 @@ root.render(
   <React.StrictMode>
     <CharactersContextProvider>
       <App />
+      <HomePage />
       <GlobalStyles />
     </CharactersContextProvider>
   </React.StrictMode>
