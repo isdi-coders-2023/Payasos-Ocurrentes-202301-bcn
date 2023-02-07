@@ -1,5 +1,9 @@
 import { CharactersStructure } from "../../../data/types";
-import { CharactersAction } from "../../actions/characters/types";
+import {
+  CharactersAction,
+  CharactersActionType,
+  LoadCharactersAction,
+} from "../../actions/characters/types";
 
 const characterReducer = (
   currentCharacters: CharactersStructure,
@@ -7,12 +11,13 @@ const characterReducer = (
 ) => {
   let newCharacters: CharactersStructure;
 
-  switch (action.type) {
-    default:
-      newCharacters = currentCharacters;
+  if (action.type === CharactersActionType.loadCharacters) {
+    newCharacters = [...(action as LoadCharactersAction).payload];
+    return newCharacters;
+  } else {
+    newCharacters = currentCharacters;
+    return newCharacters;
   }
-
-  return newCharacters;
 };
 
 export default characterReducer;
