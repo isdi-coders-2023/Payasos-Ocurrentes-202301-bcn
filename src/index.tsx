@@ -16,7 +16,7 @@ root.render(
     <CharactersContextProvider>
       <App />
       <HomePage />
-      <Character />
+      <Character name={"Morty Smith"} specie={"Human"} status={"Alive"} />
       <GlobalStyles />
     </CharactersContextProvider>
   </React.StrictMode>

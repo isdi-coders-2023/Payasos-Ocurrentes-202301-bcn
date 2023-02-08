@@ -7,6 +7,8 @@ interface CharactersContextStructure {
   dispatch: React.Dispatch<CharactersAction>;
 }
 
-const CharactersContext = createContext({} as CharactersContextStructure);
+const CharactersContext = createContext<CharactersContextStructure>(
+  {} as CharactersContextStructure
+);
 
 export default CharactersContext;

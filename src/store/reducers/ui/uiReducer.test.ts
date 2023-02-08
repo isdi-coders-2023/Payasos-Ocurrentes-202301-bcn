@@ -1,5 +1,5 @@
 import { UiActionType } from "../../actions/ui/types";
-import isLoadingReducer from "./uiReducer";
+import uiReducer from "./uiReducer";
 
 describe("Given the 'uiReducer'", () => {
   describe("When called with setIsLoading action", () => {
@@ -12,7 +12,7 @@ describe("Given the 'uiReducer'", () => {
 
       const expectedResult = true;
 
-      const result = isLoadingReducer(currentIsLoading, setIsLoadingAction);
+      const result = uiReducer(currentIsLoading, setIsLoadingAction);
 
       expect(result).toStrictEqual(expectedResult);
     });
@@ -27,7 +27,7 @@ describe("Given the 'uiReducer'", () => {
 
       const expectedResult = false;
 
-      const result = isLoadingReducer(currentIsLoading, unsetIsLoadingAction);
+      const result = uiReducer(currentIsLoading, unsetIsLoadingAction);
 
       expect(result).toStrictEqual(expectedResult);
     });
@@ -40,7 +40,7 @@ describe("Given the 'uiReducer'", () => {
 
       const currentIsLoading = true;
 
-      const result = isLoadingReducer(currentIsLoading, defaultAction);
+      const result = uiReducer(currentIsLoading, defaultAction);
 
       expect(result).toStrictEqual(currentIsLoading);
     });

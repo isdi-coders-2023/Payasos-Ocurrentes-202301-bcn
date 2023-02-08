@@ -1,6 +1,6 @@
 import { UiAction, UiActionType } from "../../actions/ui/types";
 
-const isLoadingReducer = (currentIsLoading: boolean, action: UiAction) => {
+const uiReducer = (currentIsLoading: boolean, action: UiAction) => {
   let newIsLoading: boolean;
 
   switch (action.type) {
@@ -16,4 +16,4 @@ const isLoadingReducer = (currentIsLoading: boolean, action: UiAction) => {
   return newIsLoading;
 };
 
-export default isLoadingReducer;
+export default uiReducer;
