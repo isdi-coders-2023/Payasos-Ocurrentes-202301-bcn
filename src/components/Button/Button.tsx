@@ -3,13 +3,20 @@ import ButtonStyled from "./ButtonStyled";
 interface ButtonProps {
   className: string;
   action: () => void;
+  children?: JSX.Element;
+  text?: string;
 }
 
-const Button = ({ className, action }: ButtonProps): JSX.Element => {
+const Button = ({
+  className,
+  action,
+  children,
+  text,
+}: ButtonProps): JSX.Element => {
   return (
     <ButtonStyled>
-      <button className="buttonArrow" type="button" onClick={action}>
-        <i className={className}></i>
+      <button className={className} onClick={action}>
+        {children} {text}
       </button>
     </ButtonStyled>
   );
