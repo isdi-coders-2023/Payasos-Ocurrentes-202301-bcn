@@ -7,7 +7,7 @@ describe("Given a card Character", () => {
     test("Then it should have a span", () => {
       const expectedResult = "Morty Smith";
 
-      render(<Character />);
+      render(<Character name="Morty Smith" specie="" status="" />);
 
       const result = screen.getByText("Morty Smith");
 
@@ -16,7 +16,7 @@ describe("Given a card Character", () => {
   });
 
   test("Then it should have a h2 element", () => {
-    render(<Character />);
+    render(<Character name="" status="" specie="" />);
 
     const result = screen.getByRole("heading", { level: 2 });
 
@@ -29,7 +29,7 @@ describe("Given a Character provider", () => {
     test("Then it should show a Character card", () => {
       render(
         <CharactersContextProvider>
-          <Character></Character>
+          <Character name="" status="" specie=""></Character>
         </CharactersContextProvider>
       );
 

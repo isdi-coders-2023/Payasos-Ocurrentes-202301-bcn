@@ -1,6 +1,12 @@
 import CharacterStyled from "./CharacterStyled";
 
-const Character = (): JSX.Element => {
+export interface CharacterProps {
+  name: string;
+  specie: string;
+  status: string;
+}
+
+const Character = ({ name, specie, status }: CharacterProps): JSX.Element => {
   return (
     <CharacterStyled>
       <div className="characterCard">
@@ -9,11 +15,11 @@ const Character = (): JSX.Element => {
           alt="Morty Smith con una camiseta amarilla"
           className="morty"
         />
-        <h2>Morty Smith</h2>
+        <h2>{name}</h2>
         <span className="characterCard__info characterCard__info--specie">
-          Human
+          {specie}
         </span>
-        <span className="characterCard__info">Alive</span>
+        <span className="characterCard__info">{status}</span>
       </div>
     </CharacterStyled>
   );

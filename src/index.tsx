@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import HomePage from "./components/HomePage/HomePage";
-import GlobalStyles from "./GlobalStyles";
 import CharactersContextProvider from "./store/contexts/characters/CharactersContextProvider";
 import "@fontsource/work-sans";
 import Character from "./components/Character/Character";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,7 +15,7 @@ root.render(
     <CharactersContextProvider>
       <App />
       <HomePage />
-      <Character />
+      <Character name={"Morty Smith"} specie={"Human"} status={"Alive"} />
       <GlobalStyles />
     </CharactersContextProvider>
   </React.StrictMode>
