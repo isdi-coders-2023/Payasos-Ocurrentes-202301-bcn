@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
 body {
   margin: 0;
   font-family: 'Work Sans', sans serif;
+  padding: 30px;
 }
 
 ul,
