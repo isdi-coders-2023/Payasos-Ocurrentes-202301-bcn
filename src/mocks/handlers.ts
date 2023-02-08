@@ -1,7 +1,7 @@
 import { rest } from "msw";
 
 export const handlers = [
-  rest.post("https://rickandmortyapi.com/api", (req, rest, ctx) => {
+  rest.get("https://rickandmortyapi.com/api", (req, rest, ctx) => {
     return rest(
       ctx.status(200),
       ctx.json({
@@ -12,7 +12,7 @@ export const handlers = [
     );
   }),
 
-  rest.post("https://rickandmortyapi.com/api/character", (req, rest, ctx) => {
+  rest.get("https://rickandmortyapi.com/api/character", (req, rest, ctx) => {
     return rest(
       ctx.status(200),
       ctx.json({
@@ -22,7 +22,28 @@ export const handlers = [
           pages: 1,
           prev: null,
         },
-        results: [],
+        results: [
+          {
+            id: 1,
+            name: "Rick",
+            status: "",
+            species: "",
+            gender: "",
+            origin: { name: "" },
+            location: { name: "" },
+            image: "",
+          },
+          {
+            id: 2,
+            name: "Morty",
+            status: "",
+            species: "",
+            gender: "",
+            origin: { name: "" },
+            location: { name: "" },
+            image: "",
+          },
+        ],
       })
     );
   }),
