@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import HomePage from "./components/HomePage/HomePage";
 import GlobalStyles from "./GlobalStyles";
 import CharactersContextProvider from "./store/contexts/characters/CharactersContextProvider";
 import "@fontsource/work-sans";
@@ -13,6 +14,7 @@ root.render(
   <React.StrictMode>
     <CharactersContextProvider>
       <App />
+      <HomePage />
       <Character />
       <GlobalStyles />
     </CharactersContextProvider>
