@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import UiContextProvider from "../../store/contexts/ui/UiContextProvider";
 import Button from "./Button";
 
 describe("Given a button component", () => {
@@ -10,12 +11,14 @@ describe("Given a button component", () => {
       const text = "clickButton";
 
       render(
-        <Button
-          className={className}
-          action={action}
-          children={children}
-          text={text}
-        />
+        <UiContextProvider>
+          <Button
+            className={className}
+            action={action}
+            children={children}
+            text={text}
+          />
+        </UiContextProvider>
       );
 
       const button = screen.getByRole("button", { name: text });
