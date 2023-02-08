@@ -4,14 +4,16 @@ const GlobalStyles = createGlobalStyle`
 
 body {
   margin: 0;
-  min-height: 100vh;
+  font-family: 'Work Sans', sans serif;
 }
 
 ul,
+ol,
 li {
   margin: 0;
   padding: 0;
   list-style: none;
+  
 }
 
 button {
