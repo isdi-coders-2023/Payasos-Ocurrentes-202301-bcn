@@ -22,7 +22,17 @@ li {
 
 button {
   font-family: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 134px;
+  height: 56px;
+  background-color: #a259ff;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none
 }
+
 
 h1,
 h2 {
