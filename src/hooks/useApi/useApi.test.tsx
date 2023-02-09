@@ -4,7 +4,10 @@ import { server } from "../../mocks/server";
 import {
   mockDispatch,
   mockLoadCharactersAction,
+  mockSetIsLoading,
   mockStore,
+  mockUiDispatch,
+  mockUiStore,
 } from "../../mocks/store";
 import { Wrapper } from "../../mocks/Wrapper";
 import useApi from "./useApi";
@@ -15,6 +18,10 @@ const dispatcher = mockDispatch;
 const store = mockStore;
 const loadCharactersAction = mockLoadCharactersAction;
 
+const uiStore = mockUiStore;
+const uiDispatch = mockUiDispatch;
+const setIsLoadingAction = mockSetIsLoading;
+
 describe("Given the useApi custom hook", () => {
   describe("When the getCharactersApi function is called", () => {
     test("Then it should call the dispatch", async () => {
@@ -24,13 +31,38 @@ describe("Given the useApi custom hook", () => {
         },
       } = renderHook(() => useApi(), {
         wrapper({ children }) {
-          return <Wrapper store={store}>{children}</Wrapper>;
+          return (
+            <Wrapper uiStore={uiStore} charactersStore={store}>
+              {children}
+            </Wrapper>
+          );
         },
       });
 
       await act(async () => getCharactersApi());
 
       expect(dispatcher).toHaveBeenCalledWith(loadCharactersAction);
+    });
+
+    test("Then it should call the uiDispatch twice", async () => {
+      const {
+        result: {
+          current: { getCharactersApi },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper({ children }) {
+          return (
+            <Wrapper uiStore={uiStore} charactersStore={store}>
+              {children}
+            </Wrapper>
+          );
+        },
+      });
+
+      await act(async () => getCharactersApi());
+
+      expect(uiDispatch).toHaveBeenCalledTimes(2);
+      expect(uiDispatch).toHaveBeenCalledWith(setIsLoadingAction);
     });
   });
 
@@ -43,7 +75,11 @@ describe("Given the useApi custom hook", () => {
         },
       } = renderHook(() => useApi(), {
         wrapper({ children }) {
-          return <Wrapper store={store}>{children}</Wrapper>;
+          return (
+            <Wrapper uiStore={uiStore} charactersStore={store}>
+              {children}
+            </Wrapper>
+          );
         },
       });
 
