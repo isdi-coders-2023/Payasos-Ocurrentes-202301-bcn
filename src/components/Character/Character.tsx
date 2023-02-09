@@ -1,25 +1,28 @@
+import { CharacterStructure } from "../../data/types";
 import CharacterStyled from "./CharacterStyled";
 
 export interface CharacterProps {
-  name: string;
-  specie: string;
-  status: string;
+  character: CharacterStructure;
 }
 
-const Character = ({ name, specie, status }: CharacterProps): JSX.Element => {
+const Character = ({ character }: CharacterProps): JSX.Element => {
   return (
     <CharacterStyled>
       <div className="characterCard">
         <img
-          src="morty_smith.jpeg"
-          alt="Morty Smith con una camiseta amarilla"
-          className="morty"
+          src={character.image}
+          alt={character.name}
+          className="characterCard__image"
+          width="300"
+          height="300"
         />
-        <h2>{name}</h2>
+        <h2>{character.name}</h2>
         <span className="characterCard__info characterCard__info--specie">
-          {specie}
+          {character.species}
         </span>
-        <span className="characterCard__info">{status}</span>
+        <span className="characterCard__info characterCard__info--status">
+          {character.status}
+        </span>
       </div>
     </CharacterStyled>
   );
