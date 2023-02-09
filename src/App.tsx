@@ -1,18 +1,11 @@
-import { useContext, useEffect } from "react";
-import CharactersList from "./components/CharacterList/CharactersList";
-import useApi from "./hooks/useApi/useApi";
-import CharactersContext from "./store/contexts/characters/CharactersContext";
+import Layout from "./pages/Layout/Layout";
 
 const App = (): JSX.Element => {
-  const { getCharactersApi } = useApi();
-
-  const { characters } = useContext(CharactersContext);
-
-  useEffect(() => {
-    getCharactersApi();
-  }, [getCharactersApi]);
-
-  return <CharactersList characters={characters} />;
+  return (
+    <>
+      <Layout />
+    </>
+  );
 };
 
 export default App;
