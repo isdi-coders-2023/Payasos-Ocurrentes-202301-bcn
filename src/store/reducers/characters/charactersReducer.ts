@@ -8,7 +8,7 @@ import {
 const characterReducer = (
   currentCharacters: CharactersStructure,
   action: CharactersAction
-) => {
+): CharactersStructure => {
   let newCharacters: CharactersStructure;
 
   if (action.type === CharactersActionType.loadCharacters) {

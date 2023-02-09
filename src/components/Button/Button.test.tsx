@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import UiContextProvider from "../../store/contexts/ui/UiContextProvider";
 import Button from "./Button";
 
 describe("Given a button component", () => {
@@ -10,7 +11,9 @@ describe("Given a button component", () => {
       const className = "buttonPropertie";
 
       render(
-        <Button className={className} action={action} children={children} />
+        <UiContextProvider>
+          <Button className={className} action={action} children={children} />
+        </UiContextProvider>
       );
 
       const button = screen.getByRole("button", { name: insideText });
