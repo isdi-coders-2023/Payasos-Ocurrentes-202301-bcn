@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 const LoaderStyled = styled.div`
   .dot-spinner {
-    --uib-size: 40px;
+    --uib-size: 200px;
     --uib-speed: 0.9s;
-    --uib-color: black;
+    --uib-color: #d2c8c8;
 
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     height: var(--uib-size);
     width: var(--uib-size);
   }

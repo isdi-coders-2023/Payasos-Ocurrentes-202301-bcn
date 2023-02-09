@@ -1,17 +1,18 @@
-import { DotSpinner } from "@uiball/loaders";
 import LoaderStyled from "./LoaderStyled";
 
 const Loader = (): JSX.Element => {
   return (
-    <LoaderStyled>
-      {
-        <DotSpinner
-          size={40}
-          speed={0.9}
-          color="black"
-          aria-label="The content is loading"
-        />
-      }
+    <LoaderStyled aria-label="The page is loading" role="dialog">
+      <div className="dot-spinner">
+        <div className="dot-spinner__dot"></div>
+        <div className="dot-spinner__dot"></div>
+        <div className="dot-spinner__dot"></div>
+        <div className="dot-spinner__dot"></div>
+        <div className="dot-spinner__dot"></div>
+        <div className="dot-spinner__dot"></div>
+        <div className="dot-spinner__dot"></div>
+        <div className="dot-spinner__dot"></div>
+      </div>
     </LoaderStyled>
   );
 };
