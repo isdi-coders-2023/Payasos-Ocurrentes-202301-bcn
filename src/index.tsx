@@ -1,10 +1,10 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "@fontsource/work-sans";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import HomePage from "./pages/HomePage/HomePage";
 import CharactersContextProvider from "./store/contexts/characters/CharactersContextProvider";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "@fontsource/work-sans";
 import GlobalStyles from "./styles/GlobalStyles";
 import UiContextProvider from "./store/contexts/ui/UiContextProvider";
 
