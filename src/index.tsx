@@ -1,11 +1,10 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "@fontsource/work-sans";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import HomePage from "./pages/HomePage/HomePage";
 import CharactersContextProvider from "./store/contexts/characters/CharactersContextProvider";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "@fontsource/work-sans";
-import Character from "./components/Character/Character";
 import GlobalStyles from "./styles/GlobalStyles";
 import UiContextProvider from "./store/contexts/ui/UiContextProvider";
 
@@ -16,9 +15,8 @@ root.render(
   <React.StrictMode>
     <UiContextProvider>
       <CharactersContextProvider>
-        <App />
         <HomePage />
-        <Character name={"Morty Smith"} specie={"Human"} status={"Alive"} />
+        <App />
         <GlobalStyles />
       </CharactersContextProvider>
     </UiContextProvider>

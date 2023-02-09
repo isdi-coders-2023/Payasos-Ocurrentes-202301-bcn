@@ -9,6 +9,7 @@ body {
   margin: 0;
   font-family: 'Work Sans', sans serif;
   padding: 30px;
+  background-color: #2B2B2B;
 }
 
 ul,
@@ -36,6 +37,7 @@ button {
 
 h1,
 h2 {
+  font-size: 30px;
   margin: 0;
 }
 
