@@ -1,18 +1,18 @@
 import { CharactersStructure } from "../../data/types";
 import Character from "../Character/Character";
-import CharacterListStyled from "./CharacterListStyled";
+import CharacterListStyled from "./CharactersStyled";
 
 export interface CharactersProps {
   characters: CharactersStructure;
 }
 
-const Characters = ({ characters }: CharactersProps): JSX.Element => {
+const CharactersList = ({ characters }: CharactersProps): JSX.Element => {
   return (
     <CharacterListStyled>
       <ul>
         {characters.map((character) => (
-          <li>
-            <Character character={character} key={character.id} />
+          <li key={character.id}>
+            <Character character={character} />
           </li>
         ))}
       </ul>
@@ -20,4 +20,4 @@ const Characters = ({ characters }: CharactersProps): JSX.Element => {
   );
 };
 
-export default Characters;
+export default CharactersList;
