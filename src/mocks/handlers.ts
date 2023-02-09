@@ -37,3 +37,9 @@ export const handlers = [
     );
   }),
 ];
+
+export const errorHandlers = [
+  rest.get("https://rickandmortyapi.com/api/character", (req, rest, ctx) => {
+    return rest(ctx.status(500), ctx.json(null));
+  }),
+];
