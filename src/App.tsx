@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import Characters from "./components/CharacterList/CharacterList";
+import CharactersList from "./components/CharacterList/CharactersList";
 import useApi from "./hooks/useApi/useApi";
 import CharactersContext from "./store/contexts/characters/CharactersContext";
 
@@ -12,7 +12,7 @@ const App = (): JSX.Element => {
     getCharactersApi();
   }, [getCharactersApi]);
 
-  return <Characters characters={characters} />;
+  return <CharactersList characters={characters} />;
 };
 
 export default App;

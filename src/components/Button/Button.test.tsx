@@ -1,44 +1,29 @@
 import { render, screen } from "@testing-library/react";
-import UiContextProvider from "../../store/contexts/ui/UiContextProvider";
 import Button from "./Button";
 
 describe("Given a button component", () => {
   describe("When the Button is render with the text 'clickButton'", () => {
+    const insideText = "click here";
+    const children = <span>{insideText}</span>;
+    const action = jest.fn();
     test("Then it should render button with the text 'clickButton", () => {
       const className = "buttonPropertie";
-      const action = jest.fn();
-      const children = <></>;
-      const text = "clickButton";
 
       render(
-        <UiContextProvider>
-          <Button
-            className={className}
-            action={action}
-            children={children}
-            text={text}
-          />
-        </UiContextProvider>
+        <Button className={className} action={action} children={children} />
       );
 
-      const button = screen.getByRole("button", { name: text });
+      const button = screen.getByRole("button", { name: insideText });
 
       expect(button).toBeInTheDocument();
     });
     test("should render a button with the class of primary", () => {
       const className = "primary";
-      const action = jest.fn();
-      const children = <></>;
-      const text = "primary";
+
       render(
-        <Button
-          className={className}
-          action={action}
-          children={children}
-          text={text}
-        />
+        <Button className={className} action={action} children={children} />
       );
-      const primaryButton = screen.getByRole("button", { name: text });
+      const primaryButton = screen.getByRole("button", { name: insideText });
       expect(primaryButton).toHaveClass("primary");
     });
   });
