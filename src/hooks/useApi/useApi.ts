@@ -13,10 +13,11 @@ const useApi = () => {
   const { dispatch: uiDispatch } = useContext(UiContext);
 
   const getCharactersApi = useCallback(async () => {
-    uiDispatch(setIsLoadingActionCreator());
-
     try {
+      uiDispatch(setIsLoadingActionCreator());
+
       const characterInfoResponse = await fetch(process.env.REACT_APP_URL_API!);
+
       const charactersInfo =
         (await characterInfoResponse.json()) as CharactersApiStructure;
 
