@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.3.0",
     "@fontsource/work-sans": "^4.5.14",
+    "@fortawesome/fontawesome-free": "^6.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,6 +12,7 @@
     "@types/node": "^16.18.11",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@uiball/loaders": "^1.2.6",
     "font-face": "^2.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

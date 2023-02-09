@@ -25,5 +25,21 @@ describe("Given a button component", () => {
 
       expect(button).toBeInTheDocument();
     });
+    test("should render a button with the class of primary", () => {
+      const className = "primary";
+      const action = jest.fn();
+      const children = <></>;
+      const text = "primary";
+      render(
+        <Button
+          className={className}
+          action={action}
+          children={children}
+          text={text}
+        />
+      );
+      const primaryButton = screen.getByRole("button", { name: text });
+      expect(primaryButton).toHaveClass("primary");
+    });
   });
 });
