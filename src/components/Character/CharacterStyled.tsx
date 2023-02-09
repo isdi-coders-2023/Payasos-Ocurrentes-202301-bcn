@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const CharacterStyled = styled.div`
   .characterCard {
-    width: 200px;
-    height: 320px;
+    width: 300px;
+    height: 450px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -15,6 +15,10 @@ const CharacterStyled = styled.div`
     &__info {
       padding-left: 15px;
     }
+
+    &__image {
+      border-radius: 25px 25px 0 0;
+    }
   }
 
   h2 {
@@ -23,11 +27,11 @@ const CharacterStyled = styled.div`
   }
 
   .characterCard__info--specie {
-    font-size: 20px;
+    font-size: 25px;
   }
 
-  .morty {
-    border-radius: 25px 25px 0 0;
+  .characterCard__info--status {
+    font-size: 20px;
   }
 `;
 
