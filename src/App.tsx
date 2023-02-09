@@ -1,7 +1,14 @@
-import GlobalStyle from "./globalStyles";
+import { useEffect } from "react";
+import useApi from "./hooks/useApi/useApi";
 
 const App = (): JSX.Element => {
-  return <GlobalStyle />;
+  const { getCharactersApi } = useApi();
+
+  useEffect(() => {
+    getCharactersApi();
+  }, [getCharactersApi]);
+
+  return <div></div>;
 };
 
 export default App;
