@@ -1,20 +1,33 @@
 import { CharactersStructure } from "../data/types";
 import CharactersContext from "../store/contexts/characters/CharactersContext";
+import UiContext from "../store/contexts/ui/UiContext";
 
-export interface StoreStructure {
+export interface CharactersStoreStructure {
   dispatch: React.Dispatch<any>;
   characters: CharactersStructure;
 }
 
-export interface WrapperProps {
-  children: JSX.Element | JSX.Element[];
-  store: StoreStructure;
+export interface UiStoreStructure {
+  dispatch: React.Dispatch<any>;
+  isLoading: boolean;
 }
 
-export const Wrapper = ({ children, store }: WrapperProps): JSX.Element => {
+export interface WrapperProps {
+  children: JSX.Element | JSX.Element[];
+  charactersStore: CharactersStoreStructure;
+  uiStore: UiStoreStructure;
+}
+
+export const Wrapper = ({
+  children,
+  charactersStore,
+  uiStore,
+}: WrapperProps): JSX.Element => {
   return (
-    <CharactersContext.Provider value={store}>
-      {children}
-    </CharactersContext.Provider>
+    <UiContext.Provider value={uiStore}>
+      <CharactersContext.Provider value={charactersStore}>
+        {children}
+      </CharactersContext.Provider>
+    </UiContext.Provider>
   );
 };

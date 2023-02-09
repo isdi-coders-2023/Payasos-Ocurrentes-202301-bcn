@@ -1,7 +1,7 @@
 import { rest } from "msw";
 
 export const handlers = [
-  rest.get("https://rickandmortyapi.com/api/character", (req, rest, ctx) => {
+  rest.get(process.env.REACT_APP_URL_API!, (req, rest, ctx) => {
     return rest(
       ctx.status(200),
       ctx.json({
@@ -39,7 +39,7 @@ export const handlers = [
 ];
 
 export const errorHandlers = [
-  rest.get("https://rickandmortyapi.com/api/character", (req, rest, ctx) => {
+  rest.get(process.env.REACT_APP_URL_API!, (req, rest, ctx) => {
     return rest(ctx.status(500), ctx.json(null));
   }),
 ];

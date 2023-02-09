@@ -1,11 +1,11 @@
 import { CharactersStructure } from "../data/types";
 import {
-  CharactersAction,
   CharactersActionType,
   LoadCharactersAction,
 } from "../store/actions/characters/types";
+import { SetIsLoadingAction, UiActionType } from "../store/actions/ui/types";
 
-export const dispatch: React.Dispatch<CharactersAction> = jest.fn();
+export const dispatch: React.Dispatch<any> = jest.fn();
 export const characters: CharactersStructure = [
   {
     id: 1,
@@ -28,10 +28,17 @@ export const characters: CharactersStructure = [
     image: "",
   },
 ];
-
 export const mockStore = { dispatch, characters };
 export const mockDispatch = jest.spyOn(mockStore, "dispatch");
 export const mockLoadCharactersAction: LoadCharactersAction = {
   type: CharactersActionType.loadCharacters,
   payload: characters,
+};
+
+export const isLoading = false;
+export const uiDispatch: React.Dispatch<any> = jest.fn();
+export const mockUiStore = { dispatch: uiDispatch, isLoading };
+export const mockUiDispatch = jest.spyOn(mockUiStore, "dispatch");
+export const mockSetIsLoading: SetIsLoadingAction = {
+  type: UiActionType.setIsLoading,
 };
