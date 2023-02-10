@@ -11,6 +11,7 @@ const CharacterStyled = styled.div`
     border-radius: 25px 25px;
     line-height: 1.5;
     color: white;
+    padding-right: 0;
 
     &__info {
       padding-left: 15px;
@@ -26,16 +27,18 @@ const CharacterStyled = styled.div`
   }
 
   h2 {
-    padding-left: 15px;
+    padding-left: 25px;
     padding-top: 15px;
   }
 
   .characterCard__info--specie {
     font-size: 25px;
+    padding-left: 25px;
   }
 
   .characterCard__info--status {
     font-size: 20px;
+    padding-left: 25px;
   }
 `;
 
