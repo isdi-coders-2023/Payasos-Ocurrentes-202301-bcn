@@ -9,7 +9,7 @@ export interface SetIsLoadingContextProviderProps {
 const UiContextProvider = ({
   children,
 }: SetIsLoadingContextProviderProps): JSX.Element => {
-  const [isLoading, dispatch] = useReducer(uiReducer, false);
+  const [isLoading, dispatch] = useReducer(uiReducer, true);
 
   const store = useMemo(() => ({ isLoading, dispatch }), [isLoading, dispatch]);
 

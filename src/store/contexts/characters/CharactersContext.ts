@@ -1,9 +1,9 @@
 import { createContext } from "react";
-import { CharactersStructure } from "../../../data/types";
+import { CharactersApiStructure } from "../../../data/types";
 import { CharactersAction } from "../../actions/characters/types";
 
 interface CharactersContextStructure {
-  characters: CharactersStructure;
+  characters: CharactersApiStructure;
   dispatch: React.Dispatch<CharactersAction>;
 }
 

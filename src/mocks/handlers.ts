@@ -6,10 +6,10 @@ export const handlers = [
       ctx.status(200),
       ctx.json({
         info: {
-          count: 1,
+          count: 0,
           next: "",
-          pages: 1,
-          prev: null,
+          pages: 0,
+          prev: "",
         },
         results: [
           {
