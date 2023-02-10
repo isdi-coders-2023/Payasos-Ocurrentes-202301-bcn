@@ -8,7 +8,7 @@ box-sizing: border-box;
 body {
   margin: 0;
   font-family: 'Work Sans', sans serif;
-  padding: 30px;
+  padding: 30px 10px;
   background-color: #2B2B2B;
 }
 
