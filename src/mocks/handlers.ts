@@ -40,6 +40,6 @@ export const handlers = [
 
 export const errorHandlers = [
   rest.get(process.env.REACT_APP_URL_API!, (req, rest, ctx) => {
-    return rest(ctx.status(500), ctx.json(null));
+    return rest(ctx.status(404));
   }),
 ];
