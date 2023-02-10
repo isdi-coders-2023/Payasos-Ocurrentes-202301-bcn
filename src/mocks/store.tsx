@@ -1,4 +1,4 @@
-import { CharactersStructure } from "../data/types";
+import { CharactersApiStructure } from "../data/types";
 import {
   CharactersActionType,
   LoadCharactersAction,
@@ -6,28 +6,31 @@ import {
 import { SetIsLoadingAction, UiActionType } from "../store/actions/ui/types";
 
 export const dispatch: React.Dispatch<any> = jest.fn();
-export const characters: CharactersStructure = [
-  {
-    id: 1,
-    name: "Rick",
-    status: "",
-    species: "",
-    gender: "",
-    origin: { name: "" },
-    location: { name: "" },
-    image: "",
-  },
-  {
-    id: 2,
-    name: "Morty",
-    status: "",
-    species: "",
-    gender: "",
-    origin: { name: "" },
-    location: { name: "" },
-    image: "",
-  },
-];
+export const characters: CharactersApiStructure = {
+  info: { count: 0, pages: 0, next: "", prev: "" },
+  results: [
+    {
+      id: 1,
+      name: "Rick",
+      status: "",
+      species: "",
+      gender: "",
+      origin: { name: "" },
+      location: { name: "" },
+      image: "",
+    },
+    {
+      id: 2,
+      name: "Morty",
+      status: "",
+      species: "",
+      gender: "",
+      origin: { name: "" },
+      location: { name: "" },
+      image: "",
+    },
+  ],
+};
 export const mockStore = { dispatch, characters };
 export const mockDispatch = jest.spyOn(mockStore, "dispatch");
 export const mockLoadCharactersAction: LoadCharactersAction = {
@@ -35,7 +38,7 @@ export const mockLoadCharactersAction: LoadCharactersAction = {
   payload: characters,
 };
 
-export const isLoading = false;
+export const isLoading = true;
 export const uiDispatch: React.Dispatch<any> = jest.fn();
 export const mockUiStore = { dispatch: uiDispatch, isLoading };
 export const mockUiDispatch = jest.spyOn(mockUiStore, "dispatch");

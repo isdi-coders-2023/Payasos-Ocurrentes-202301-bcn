@@ -19,12 +19,8 @@ export interface CharactersApiStructure {
   info: {
     count: number;
     pages: number;
-    next: string;
-    prev: string;
+    next: null | string;
+    prev: null | string;
   };
   results: CharactersStructure;
-}
-
-export interface ApiEndpointsStructure {
-  characters: string;
 }

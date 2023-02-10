@@ -1,16 +1,18 @@
-import { CharactersStructure } from "../../data/types";
+import { CharactersApiStructure } from "../../data/types";
 import Character from "../Character/Character";
 import CharacterListStyled from "./CharactersStyled";
 
 export interface CharactersProps {
-  characters: CharactersStructure;
+  characters: CharactersApiStructure;
 }
 
-const CharactersList = ({ characters }: CharactersProps): JSX.Element => {
+const CharactersList = ({
+  characters: { results },
+}: CharactersProps): JSX.Element => {
   return (
     <CharacterListStyled>
       <ul>
-        {characters.map((character) => (
+        {results.map((character) => (
           <li key={character.id}>
             <Character character={character} />
           </li>
