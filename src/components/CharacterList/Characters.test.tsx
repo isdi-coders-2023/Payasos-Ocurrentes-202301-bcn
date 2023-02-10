@@ -1,26 +1,35 @@
 import { render, screen } from "@testing-library/react";
-import { CharactersStructure } from "../../data/types";
+import { CharactersApiStructure } from "../../data/types";
 import CharactersList from "./CharactersList";
 
 describe("Given a component Characters List", () => {
   describe("When rendered with a given character", () => {
     test("Then it should show a list of characters and one of them should have the name 'Morty Smith'", () => {
-      const characters: CharactersStructure = [
-        {
-          id: 0,
-          name: "Morty Smith",
-          status: "",
-          species: "",
-          gender: "",
-          origin: {
-            name: "",
+      const characters: CharactersApiStructure = {
+        info: { count: 0, pages: 0, next: "", prev: "" },
+        results: [
+          {
+            id: 1,
+            name: "Rick",
+            status: "",
+            species: "",
+            gender: "",
+            origin: { name: "" },
+            location: { name: "" },
+            image: "",
           },
-          location: {
-            name: "",
+          {
+            id: 2,
+            name: "Morty Smith",
+            status: "",
+            species: "",
+            gender: "",
+            origin: { name: "" },
+            location: { name: "" },
+            image: "",
           },
-          image: "",
-        },
-      ];
+        ],
+      };
 
       render(<CharactersList characters={characters} />);
 

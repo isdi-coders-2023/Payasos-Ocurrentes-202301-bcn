@@ -64,30 +64,30 @@ describe("Given the useApi custom hook", () => {
       expect(uiDispatch).toHaveBeenCalledTimes(2);
       expect(uiDispatch).toHaveBeenCalledWith(setIsLoadingAction);
     });
+  });
 
-    describe("When the getCharactersApi function is called and the response from the fetch is failed", () => {
-      beforeEach(() => {
-        server.resetHandlers(...errorHandlers);
+  describe("When the getCharactersApi function is called and the response from the fetch is failed", () => {
+    beforeEach(() => {
+      server.resetHandlers(...errorHandlers);
+    });
+    test("Then it should not call the dispatch", async () => {
+      const {
+        result: {
+          current: { getCharactersApi },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper({ children }) {
+          return (
+            <Wrapper uiStore={uiStore} charactersStore={store}>
+              {children}
+            </Wrapper>
+          );
+        },
       });
-      test("Then it should not call the dispatch", async () => {
-        const {
-          result: {
-            current: { getCharactersApi },
-          },
-        } = renderHook(() => useApi(), {
-          wrapper({ children }) {
-            return (
-              <Wrapper uiStore={uiStore} charactersStore={store}>
-                {children}
-              </Wrapper>
-            );
-          },
-        });
 
-        await act(async () => getCharactersApi());
+      await act(async () => getCharactersApi());
 
-        expect(dispatcher).not.toBeCalled();
-      });
+      expect(dispatcher).not.toBeCalled();
     });
   });
 });
