@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
             <a
               href="Favourites"
               className="navbar__anchor"
-              aria-label="Favourites link"
+              aria-label="Favourites"
             >
               <i className="desktop__favourites">favourites</i>
             </a>
