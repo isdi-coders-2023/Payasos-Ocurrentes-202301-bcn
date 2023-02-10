@@ -10,10 +10,21 @@ interface CharactersContextProviderProps {
 const CharactersContextProvider = ({
   children,
 }: CharactersContextProviderProps): JSX.Element => {
-  const [characters, dispatch] = useReducer(
-    characterReducer,
-    {} as CharactersApiStructure
-  );
+  const [characters, dispatch] = useReducer(characterReducer, {
+    info: { count: 0, pages: 0, next: "", prev: "" },
+    results: [
+      {
+        id: 0,
+        name: "",
+        status: "",
+        species: "",
+        gender: "",
+        origin: { name: "" },
+        location: { name: "" },
+        image: "",
+      },
+    ],
+  } as CharactersApiStructure);
 
   const store = useMemo(
     () => ({ characters, dispatch }),
