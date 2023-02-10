@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
 const LoaderStyled = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .dot-spinner {
     --uib-size: 200px;
     --uib-speed: 0.9s;
