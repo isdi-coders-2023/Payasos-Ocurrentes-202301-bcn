@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CharacterStyled = styled.div`
-  .characterCard {
+  .character-card {
     width: 300px;
     height: 450px;
     display: flex;
@@ -18,6 +18,10 @@ const CharacterStyled = styled.div`
 
     &__image {
       border-radius: 25px 25px 0 0;
+    }
+
+    &__title-characters--smallTitle {
+      font-size: 20px;
     }
   }
 

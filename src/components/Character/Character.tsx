@@ -6,9 +6,14 @@ export interface CharacterProps {
 }
 
 const Character = ({ character }: CharacterProps): JSX.Element => {
+  const getSmallerSizeTitleClass = () => {
+    const titleLength = 13;
+    return character.name.length > titleLength ? "--smallTitle" : "";
+  };
+
   return (
     <CharacterStyled>
-      <div className="characterCard">
+      <div className="character-card">
         <img
           src={character.image}
           alt={character.name}
@@ -16,11 +21,15 @@ const Character = ({ character }: CharacterProps): JSX.Element => {
           width="300"
           height="300"
         />
-        <h2>{character.name}</h2>
-        <span className="characterCard__info characterCard__info--specie">
+        <h2
+          className={`character-card__title-characters${getSmallerSizeTitleClass()}`}
+        >
+          {character.name}
+        </h2>
+        <span className="character-card__info characterCard__info--specie">
           {character.species}
         </span>
-        <span className="characterCard__info characterCard__info--status">
+        <span className="character-card__info characterCard__info--status">
           {character.status}
         </span>
       </div>
