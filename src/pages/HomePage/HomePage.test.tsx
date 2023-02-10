@@ -1,17 +1,18 @@
 import { render, screen } from "@testing-library/react";
-import CharactersContextProvider from "../../store/contexts/characters/CharactersContextProvider";
-import UiContextProvider from "../../store/contexts/ui/UiContextProvider";
+import { mockStore, mockUiStore } from "../../mocks/store";
+import { Wrapper } from "../../mocks/Wrapper";
 import HomePage from "./HomePage";
+
+const store = mockStore;
+const uiStore = mockUiStore;
 
 describe("Given a Character provider", () => {
   describe("When rendered", () => {
     test("Then it should show the HomePage component", () => {
       render(
-        <UiContextProvider>
-          <CharactersContextProvider>
-            <HomePage></HomePage>
-          </CharactersContextProvider>
-        </UiContextProvider>
+        <Wrapper charactersStore={store} uiStore={uiStore}>
+          <HomePage></HomePage>
+        </Wrapper>
       );
 
       const result = screen.getByRole("heading", { level: 1 });

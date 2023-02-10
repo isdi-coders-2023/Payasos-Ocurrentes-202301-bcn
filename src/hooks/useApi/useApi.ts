@@ -23,7 +23,7 @@ const useApi = () => {
 
       uiDispatch(unsetIsLoadingActionCreator());
 
-      dispatch(loadCharactersActionCreator(charactersInfo.results));
+      dispatch(loadCharactersActionCreator(charactersInfo));
     } catch (error) {
       return (error as Error).message;
     }

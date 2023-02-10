@@ -1,10 +1,10 @@
-import { CharactersStructure } from "../data/types";
+import { CharactersApiStructure } from "../data/types";
 import CharactersContext from "../store/contexts/characters/CharactersContext";
 import UiContext from "../store/contexts/ui/UiContext";
 
 export interface CharactersStoreStructure {
   dispatch: React.Dispatch<any>;
-  characters: CharactersStructure;
+  characters: CharactersApiStructure;
 }
 
 export interface UiStoreStructure {
