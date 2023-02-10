@@ -17,7 +17,7 @@ const Character = ({ character }: CharacterProps): JSX.Element => {
         <img
           src={character.image}
           alt={character.name}
-          className="characterCard__image"
+          className="character-card__image"
           width="300"
           height="300"
         />
