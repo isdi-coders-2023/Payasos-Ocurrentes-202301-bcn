@@ -1,8 +1,8 @@
-import { CharactersStructure } from "../../../data/types";
+import { CharactersApiStructure } from "../../../data/types";
 import { CharactersActionType, LoadCharactersAction } from "./types";
 
 export const loadCharactersActionCreator = (
-  characters: CharactersStructure
+  characters: CharactersApiStructure
 ): LoadCharactersAction => ({
   type: CharactersActionType.loadCharacters,
   payload: characters,

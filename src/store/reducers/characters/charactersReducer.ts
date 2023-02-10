@@ -1,4 +1,4 @@
-import { CharactersStructure } from "../../../data/types";
+import { CharactersApiStructure } from "../../../data/types";
 import {
   CharactersAction,
   CharactersActionType,
@@ -6,13 +6,13 @@ import {
 } from "../../actions/characters/types";
 
 const characterReducer = (
-  currentCharacters: CharactersStructure,
+  currentCharacters: CharactersApiStructure,
   action: CharactersAction
-): CharactersStructure => {
-  let newCharacters: CharactersStructure;
+): CharactersApiStructure => {
+  let newCharacters: CharactersApiStructure;
 
   if (action.type === CharactersActionType.loadCharacters) {
-    newCharacters = [...(action as LoadCharactersAction).payload];
+    newCharacters = { ...(action as LoadCharactersAction).payload };
     return newCharacters;
   } else {
     newCharacters = currentCharacters;
