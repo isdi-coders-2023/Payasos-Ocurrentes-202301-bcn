@@ -66,3 +66,31 @@ describe("Given a Character provider", () => {
     });
   });
 });
+
+describe("Given a card Character component with a large name title", () => {
+  describe("When rendered and has a bigger character name than 13 characteres", () => {
+    test("Then it should show a card Character with the class and the modifyier 'title-characters--smalltitle'", () => {
+      const character: CharacterStructure = {
+        id: 0,
+        name: "Ants in my Eyes Johnson",
+        status: "",
+        species: "",
+        gender: "",
+        origin: {
+          name: "",
+        },
+        location: {
+          name: "",
+        },
+        image: "",
+      };
+      const className = "character-card__title-characters--smallTitle";
+
+      render(<Character character={character} />);
+
+      const expectedResult = screen.getByRole("heading", { level: 2 });
+
+      expect(expectedResult).toHaveClass(className);
+    });
+  });
+});
