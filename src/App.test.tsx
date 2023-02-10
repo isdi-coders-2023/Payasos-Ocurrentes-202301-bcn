@@ -4,8 +4,8 @@ import App from "./App";
 
 describe("Given a App component", () => {
   describe("When rendered", () => {
-    test("Then it should show a header with the text `RICK AND MORTY - WIKI`", () => {
-      const expectedHeader = "RICK AND MORTY - WIKI";
+    test("Then it should show a header with the text `rick and morty - wiki`", () => {
+      const expectedHeader = "rick and morty - wiki";
 
       render(<App />, { wrapper: BrowserRouter });
 
