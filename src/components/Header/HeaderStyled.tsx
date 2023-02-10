@@ -13,13 +13,15 @@ const HeaderStyled = styled.div`
   .header-container__span {
     color: #fff;
     font-size: 1.6rem;
+    white-space: nowrap;
   }
 
   .navbar {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 1.8rem;
+    padding: 20px 0 20px;
   }
 
   i {
