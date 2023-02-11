@@ -6,7 +6,9 @@ describe("Given a loader element", () => {
     test("It should to render a loader with the aria-label attribute: 'The page is loading '", () => {
       render(<Loader />);
 
-      const text = screen.getByRole("dialog", { name: "The page is loading" });
+      const text = screen.getByRole("dialog", {
+        name: "The page is loading",
+      });
 
       expect(text).toBeInTheDocument();
     });

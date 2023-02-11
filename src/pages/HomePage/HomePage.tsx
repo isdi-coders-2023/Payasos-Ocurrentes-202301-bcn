@@ -6,14 +6,14 @@ import CharactersContext from "../../store/contexts/characters/CharactersContext
 import UiContext from "../../store/contexts/ui/UiContext";
 
 const HomePage = (): JSX.Element => {
+  const { characters } = useContext(CharactersContext);
+  const { isLoading } = useContext(UiContext);
+
   const { getCharactersApi } = useApi();
 
   useEffect(() => {
     getCharactersApi();
   }, [getCharactersApi]);
-
-  const { characters } = useContext(CharactersContext);
-  const { isLoading } = useContext(UiContext);
 
   return (
     <>
