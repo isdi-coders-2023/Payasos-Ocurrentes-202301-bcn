@@ -7,7 +7,7 @@ export interface CharacterProps {
 
 const Character = ({ character }: CharacterProps): JSX.Element => {
   const getSmallerSizeTitleClass = () => {
-    const titleLength = 13;
+    const titleLength = 17;
     return character.name.length > titleLength ? "--smallTitle" : "";
   };
 
