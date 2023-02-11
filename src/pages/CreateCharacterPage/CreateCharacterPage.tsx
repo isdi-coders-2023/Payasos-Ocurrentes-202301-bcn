@@ -1,9 +1,9 @@
 import Form from "../../components/Form/Form";
-import CharacterPageStyled from "./CharacterPageStyled";
+import CreateCharacterPageStyled from "./CreateCharacterPageStyled";
 
-const CharacterPage = (): JSX.Element => {
+const CreateCharacterPage = (): JSX.Element => {
   return (
-    <CharacterPageStyled>
+    <CreateCharacterPageStyled>
       <h1>Create Your Character</h1>
       <img
         src="./Rick&MortyImages/Rick&MortyTogether.png"
@@ -12,8 +12,8 @@ const CharacterPage = (): JSX.Element => {
         height="310"
       />
       <Form />
-    </CharacterPageStyled>
+    </CreateCharacterPageStyled>
   );
 };
 
-export default CharacterPage;
+export default CreateCharacterPage;

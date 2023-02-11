@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import CharacterPage from "../pages/CharacterPage/CharacterPage";
+import CreateCharacterPage from "../pages/CreateCharacterPage/CreateCharacterPage";
 import { DetailPage } from "../pages/DetailPage/DetailPage";
 import HomePage from "../pages/HomePage/HomePage";
 
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/create",
-        element: <CharacterPage />,
+        element: <CreateCharacterPage />,
       },
     ],
   },

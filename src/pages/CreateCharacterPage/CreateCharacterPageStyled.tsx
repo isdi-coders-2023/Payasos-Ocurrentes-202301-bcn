@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CharacterPageStyled = styled.div`
+const CreateCharacterPageStyled = styled.div`
   display: flex;
   flex-direction: column;
   h1 {
@@ -12,4 +12,4 @@ const CharacterPageStyled = styled.div`
   }
 `;
 
-export default CharacterPageStyled;
+export default CreateCharacterPageStyled;
