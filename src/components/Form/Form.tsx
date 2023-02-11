@@ -1,24 +1,57 @@
+import { useForm } from "react-hook-form";
 import FormStyled from "./FormStyled";
+import "/node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+interface FormData {
+  name: string;
+  status: string;
+  species: string;
+  gender: string;
+  origin: string;
+  imageLink: string;
+}
 
 const Form = (): JSX.Element => {
-  const onSubmit = () => {};
+  const { register, handleSubmit } = useForm<FormData>();
+  const onSubmit = handleSubmit((values) => {
+    return values;
+  });
   return (
     <FormStyled>
       <div className="container">
         <form onSubmit={onSubmit} className="container__form form">
-          <input className="form-input" placeholder="Name" />
-          <input className="form-input" name="status" placeholder="Status" />
-          <input className="form-input" name="species" placeholder="Species" />
-          <input className="form-input" name="gender" placeholder="Gende" />
-          <input className="form-input" name="origin" placeholder="Origin" />
           <input
+            {...register("name", { required: true })}
             className="form-input"
-            name="imageLink"
-            placeholder="Image Link"
+            placeholder="Name (required)"
+          />
+          <input
+            {...register("status", { required: true })}
+            className="form-input"
+            placeholder="Status (required)"
+          />
+          <input
+            {...register("species", { required: true })}
+            className="form-input"
+            placeholder="Species (required)"
+          />
+          <input
+            {...register("gender", { required: true })}
+            className="form-input"
+            placeholder="Gender (required)"
+          />
+          <input
+            {...register("origin", { required: true })}
+            className="form-input"
+            placeholder="Origin (required)"
+          />
+          <input
+            {...register("imageLink", { required: true })}
+            className="form-input"
+            placeholder="Image Link (required)"
           />
 
           <button type="submit">modify</button>
-          <button type="submit"></button>
         </form>
       </div>
     </FormStyled>
