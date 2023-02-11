@@ -17,6 +17,7 @@ describe("Given the 'uiReducer'", () => {
       expect(result).toStrictEqual(expectedResult);
     });
   });
+
   describe("When called with unsetIsLoading action", () => {
     test("Then it should return false", () => {
       const unsetIsLoadingAction = {
@@ -32,6 +33,7 @@ describe("Given the 'uiReducer'", () => {
       expect(result).toStrictEqual(expectedResult);
     });
   });
+
   describe("When called default action", () => {
     test("Then it should return 'currentIsLoading'", () => {
       const defaultAction = {

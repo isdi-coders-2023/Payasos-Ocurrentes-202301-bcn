@@ -1,6 +1,16 @@
-import { CharactersApiStructure } from "../../../data/types";
-import { loadCharactersActionCreator } from "./charactersActionCreators";
-import { CharactersActionType, LoadCharactersAction } from "./types";
+import {
+  CharactersApiStructure,
+  CharacterStructure,
+} from "../../../data/types";
+import {
+  loadCharacterActionCreator,
+  loadCharactersActionCreator,
+} from "./charactersActionCreators";
+import {
+  CharactersActionType,
+  LoadCharacterAction,
+  LoadCharactersAction,
+} from "./types";
 
 describe("Given a charactersActionCreator", () => {
   describe("When it receives a list of 2 characters", () => {
@@ -39,6 +49,34 @@ describe("Given a charactersActionCreator", () => {
       const loadCharactersAction = loadCharactersActionCreator(characters);
 
       expect(loadCharactersAction).toStrictEqual(expectedLoadCharactersAction);
+    });
+  });
+
+  describe("When it receives a list of 1 character", () => {
+    test("Then it should return an action with type 'loadCharacter' and the single character as a payload", () => {
+      const character: CharacterStructure = {
+        id: 2,
+        name: "Morty Smith",
+        status: "",
+        species: "",
+        gender: "",
+        origin: {
+          name: "",
+        },
+        location: {
+          name: "",
+        },
+        image: "",
+      };
+
+      const expectedLoadCharacterAction: LoadCharacterAction = {
+        type: CharactersActionType.loadCharacter,
+        payload: character,
+      };
+
+      const loadCharacterAction = loadCharacterActionCreator(character);
+
+      expect(loadCharacterAction).toStrictEqual(expectedLoadCharacterAction);
     });
   });
 });
