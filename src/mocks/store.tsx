@@ -38,7 +38,7 @@ export const mockLoadCharactersAction: LoadCharactersAction = {
   payload: characters,
 };
 
-export const isLoading = true;
+export const isLoading = false;
 export const uiDispatch: React.Dispatch<any> = jest.fn();
 export const mockUiStore = { dispatch: uiDispatch, isLoading };
 export const mockUiDispatch = jest.spyOn(mockUiStore, "dispatch");
