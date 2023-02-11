@@ -1,8 +1,12 @@
-import { CharactersApiStructure } from "../../../data/types";
+import {
+  CharactersApiStructure,
+  CharacterStructure,
+} from "../../../data/types";
 
 export enum CharactersActionType {
   defaultAction,
   loadCharacters,
+  loadCharacter,
 }
 
 export interface CharactersAction {
@@ -12,4 +16,8 @@ export interface CharactersAction {
 
 export interface LoadCharactersAction extends CharactersAction {
   payload: CharactersApiStructure;
+}
+
+export interface LoadCharacterAction extends CharactersAction {
+  payload: CharacterStructure;
 }
