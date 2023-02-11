@@ -1,6 +1,6 @@
 import { useMemo, useReducer } from "react";
 import { CharactersApiStructure } from "../../../data/types";
-import characterReducer from "../../reducers/characters/charactersReducer";
+import charactersReducer from "../../reducers/characters/charactersReducer";
 import CharactersContext from "./CharactersContext";
 
 interface CharactersContextProviderProps {
@@ -10,7 +10,7 @@ interface CharactersContextProviderProps {
 const CharactersContextProvider = ({
   children,
 }: CharactersContextProviderProps): JSX.Element => {
-  const [characters, dispatch] = useReducer(characterReducer, {
+  const [characters, dispatch] = useReducer(charactersReducer, {
     info: { count: 0, pages: 0, next: "", prev: "" },
     results: [
       {

@@ -1,7 +1,10 @@
 import { useContext, useCallback } from "react";
 import CharactersContext from "../../store/contexts/characters/CharactersContext";
-import { loadCharactersActionCreator } from "../../store/actions/characters/charactersActionCreators";
-import { CharactersApiStructure } from "../../data/types";
+import {
+  loadCharacterActionCreator,
+  loadCharactersActionCreator,
+} from "../../store/actions/characters/charactersActionCreators";
+import { CharactersApiStructure, CharacterStructure } from "../../data/types";
 import UiContext from "../../store/contexts/ui/UiContext";
 import {
   setIsLoadingActionCreator,
@@ -29,7 +32,29 @@ const useApi = () => {
     }
   }, [dispatch, uiDispatch]);
 
-  return { getCharactersApi };
+  const getSingleCharacter = useCallback(
+    async (id: number) => {
+      try {
+        uiDispatch(setIsLoadingActionCreator());
+
+        const singleCharacterResponse = await fetch(
+          `process.env.REACT_APP_ID_CHARACTER!${id}`
+        );
+
+        const singleCharacter =
+          (await singleCharacterResponse.json()) as CharacterStructure;
+
+        uiDispatch(unsetIsLoadingActionCreator());
+
+        dispatch(loadCharacterActionCreator(singleCharacter));
+      } catch (error) {
+        return (error as Error).message;
+      }
+    },
+    [dispatch, uiDispatch]
+  );
+
+  return { getCharactersApi, getSingleCharacter };
 };
 
 export default useApi;
