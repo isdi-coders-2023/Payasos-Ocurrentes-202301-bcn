@@ -45,3 +45,11 @@ export const mockUiDispatch = jest.spyOn(mockUiStore, "dispatch");
 export const mockSetIsLoading: SetIsLoadingAction = {
   type: UiActionType.setIsLoading,
 };
+
+export const isLoadingTrue = true;
+export const uiDispatchTrue: React.Dispatch<any> = jest.fn();
+export const mockUiStoreTrue = {
+  dispatch: uiDispatch,
+  isLoading: isLoadingTrue,
+};
+export const mockUiDispatchTrue = jest.spyOn(mockUiStoreTrue, "dispatch");
