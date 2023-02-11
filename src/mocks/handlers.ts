@@ -36,6 +36,22 @@ export const handlers = [
       })
     );
   }),
+
+  rest.get(`process.env.REACT_APP_ID_CHARACTER!${1}`, (req, rest, ctx) => {
+    return rest(
+      ctx.status(200),
+      ctx.json({
+        id: 1,
+        name: "Rick",
+        status: "",
+        species: "",
+        gender: "",
+        origin: { name: "" },
+        location: { name: "" },
+        image: "",
+      })
+    );
+  }),
 ];
 
 export const errorHandlers = [

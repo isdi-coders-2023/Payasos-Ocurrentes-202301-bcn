@@ -10,6 +10,10 @@ import {
   mockUiStore,
 } from "../../mocks/store";
 import { Wrapper } from "../../mocks/Wrapper";
+import {
+  CharactersActionType,
+  LoadCharacterAction,
+} from "../../store/actions/characters/types";
 import useApi from "./useApi";
 
 beforeAll(() => jest.clearAllMocks());
@@ -86,6 +90,69 @@ describe("Given the useApi custom hook", () => {
       });
 
       await act(async () => getCharactersApi());
+
+      expect(dispatcher).not.toBeCalled();
+    });
+  });
+
+  describe("When the getSingleCharacter function is called", () => {
+    test("Then it should call the dispatch and the uiDispatch twice", async () => {
+      const loadCharacterAction: LoadCharacterAction = {
+        type: CharactersActionType.loadCharacter,
+        payload: {
+          id: 1,
+          name: "Rick",
+          status: "",
+          species: "",
+          gender: "",
+          origin: { name: "" },
+          location: { name: "" },
+          image: "",
+        },
+      };
+
+      const {
+        result: {
+          current: { getSingleCharacter },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper({ children }) {
+          return (
+            <Wrapper uiStore={uiStore} charactersStore={store}>
+              {children}
+            </Wrapper>
+          );
+        },
+      });
+
+      await act(async () => getSingleCharacter(1));
+
+      expect(dispatcher).toBeCalled();
+      expect(dispatcher).toHaveBeenCalledWith(loadCharacterAction);
+      expect(uiDispatch).toHaveBeenCalledTimes(2);
+    });
+  });
+
+  describe("When the getSingleCharacter function is called and the response from the fetch is failed", () => {
+    beforeEach(() => {
+      server.resetHandlers(...errorHandlers);
+    });
+    test("Then it should not call the dispatch", async () => {
+      const {
+        result: {
+          current: { getSingleCharacter },
+        },
+      } = renderHook(() => useApi(), {
+        wrapper({ children }) {
+          return (
+            <Wrapper uiStore={uiStore} charactersStore={store}>
+              {children}
+            </Wrapper>
+          );
+        },
+      });
+
+      await act(async () => getSingleCharacter(1));
 
       expect(dispatcher).not.toBeCalled();
     });
