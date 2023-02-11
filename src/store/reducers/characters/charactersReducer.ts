@@ -2,22 +2,32 @@ import { CharactersApiStructure } from "../../../data/types";
 import {
   CharactersAction,
   CharactersActionType,
+  LoadCharacterAction,
   LoadCharactersAction,
 } from "../../actions/characters/types";
 
-const characterReducer = (
+const charactersReducer = (
   currentCharacters: CharactersApiStructure,
   action: CharactersAction
 ): CharactersApiStructure => {
   let newCharacters: CharactersApiStructure;
 
-  if (action.type === CharactersActionType.loadCharacters) {
-    newCharacters = { ...(action as LoadCharactersAction).payload };
-    return newCharacters;
-  } else {
-    newCharacters = currentCharacters;
-    return newCharacters;
+  switch (action.type) {
+    case CharactersActionType.loadCharacters:
+      newCharacters = { ...(action as LoadCharactersAction).payload };
+      break;
+
+    case CharactersActionType.loadCharacter:
+      newCharacters = {
+        ...currentCharacters,
+        results: [(action as LoadCharacterAction).payload],
+      };
+      break;
+
+    default:
+      newCharacters = currentCharacters;
   }
+  return newCharacters;
 };
 
-export default characterReducer;
+export default charactersReducer;

@@ -4,7 +4,7 @@ import {
   CharactersActionType,
   LoadCharactersAction,
 } from "../../actions/characters/types";
-import characterReducer from "./charactersReducer";
+import charactersReducer from "./charactersReducer";
 
 describe("Given the characterReducer", () => {
   describe("When it is invoked with two characters and the loadCharacters action type", () => {
@@ -40,7 +40,7 @@ describe("Given the characterReducer", () => {
         payload: characters,
       };
 
-      const returnedCharacters = characterReducer(characters, loadAction);
+      const returnedCharacters = charactersReducer(characters, loadAction);
 
       expect(returnedCharacters).toStrictEqual(expectedCharacters);
     });
@@ -79,7 +79,7 @@ describe("Given the characterReducer", () => {
         payload: characters,
       };
 
-      const returnedCharacters = characterReducer(characters, defaultAction);
+      const returnedCharacters = charactersReducer(characters, defaultAction);
 
       expect(returnedCharacters).toStrictEqual(expectedCharacters);
     });
