@@ -3,7 +3,6 @@ import { useContext } from "react";
 import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
 import UiContext from "../../store/contexts/ui/UiContext";
-import GlobalStyles from "../../styles/GlobalStyles";
 
 const Layout = (): JSX.Element => {
   const { isLoading } = useContext(UiContext);
@@ -13,7 +12,6 @@ const Layout = (): JSX.Element => {
       <Header />
       <main>
         {isLoading && <Loader />}
-        <GlobalStyles />
         <Outlet />
       </main>
     </>
