@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CharacterStructure } from "../../data/types";
 import CharacterStyled from "./CharacterStyled";
 
@@ -13,7 +14,7 @@ const Character = ({ character }: CharacterProps): JSX.Element => {
 
   return (
     <CharacterStyled>
-      <div className="character-card">
+      <Link to={`detail/${character.id}`} className="character-card">
         <img
           src={character.image}
           alt={character.name}
@@ -32,7 +33,7 @@ const Character = ({ character }: CharacterProps): JSX.Element => {
         <span className="character-card__info characterCard__info--status">
           {character.status}
         </span>
-      </div>
+      </Link>
     </CharacterStyled>
   );
 };

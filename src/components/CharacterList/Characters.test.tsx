@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import { CharactersApiStructure } from "../../data/types";
 import CharactersList from "./CharactersList";
 
@@ -31,7 +32,9 @@ describe("Given a component Characters List", () => {
         ],
       };
 
-      render(<CharactersList characters={characters} />);
+      render(<CharactersList characters={characters} />, {
+        wrapper: BrowserRouter,
+      });
 
       const result = screen.getByText("Morty Smith");
 

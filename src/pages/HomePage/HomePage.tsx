@@ -19,7 +19,7 @@ const HomePage = (): JSX.Element => {
   return (
     <>
       <HomePageStyled>
-        <h1 className="main-title">Characters</h1>
+        {!isLoading && <h1 className="main-title">Characters</h1>}
         {!isLoading && <CharactersList characters={characters} />}
         <Footer />
       </HomePageStyled>

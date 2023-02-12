@@ -1,4 +1,5 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Link } from "react-router-dom";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = (): JSX.Element => {
@@ -32,27 +33,23 @@ const Header = (): JSX.Element => {
           </div>
         </div>
         <div className="header-container__navbar navbar">
-          <a
-            href="characters"
-            className="navbar__anchor"
-            aria-label="Characters link"
-          >
+          <Link to="/" className="navbar__anchor" aria-label="Characters link">
             <i className="fa-solid fa-user-group"></i>
-          </a>
-          <a
-            href="favourites"
+          </Link>
+          <Link
+            to="favourites"
             className="navbar__anchor"
             aria-label="Favourites link"
           >
             <i className="fa-regular fa-heart"></i>
-          </a>
-          <a
-            href="creativity-zone"
+          </Link>
+          <Link
+            to="creativity-zone"
             className="navbar__anchor"
             aria-label="Creativity Zone link"
           >
             <i className="fa-regular fa-lightbulb"></i>
-          </a>
+          </Link>
         </div>
       </header>
     </HeaderStyled>

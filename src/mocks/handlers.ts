@@ -1,5 +1,26 @@
 import { rest } from "msw";
 
+const characterResponse = {
+  id: 1,
+  name: "Rick Sanchez",
+  status: "Alive",
+  species: "Human",
+  type: "",
+  gender: "Male",
+  origin: {
+    name: "Earth (C-137)",
+    url: "https://rickandmortyapi.com/api/location/1",
+  },
+  location: {
+    name: "Citadel of Ricks",
+    url: "https://rickandmortyapi.com/api/location/3",
+  },
+  image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+  episode: [""],
+  url: "https://rickandmortyapi.com/api/character/1",
+  created: "2017-11-04T18:48:46.250Z",
+};
+
 export const handlers = [
   rest.get(process.env.REACT_APP_URL_API!, (req, rest, ctx) => {
     return rest(
@@ -37,7 +58,10 @@ export const handlers = [
     );
   }),
 
-  rest.get(`process.env.REACT_APP_ID_CHARACTER${1}`, (req, rest, ctx) => {
+  rest.get(`${process.env.REACT_APP_ID_CHARACTER}${1}`, (req, rest, ctx) => {
+    return rest(ctx.status(200), ctx.json(characterResponse));
+  }),
+  rest.get(`${process.env.REACT_APP_ID_CHARACTER}${NaN}`, (req, rest, ctx) => {
     return rest(
       ctx.status(200),
       ctx.json({
@@ -121,7 +145,7 @@ export const errorHandlers = [
     return rest(ctx.status(404));
   }),
 
-  rest.get(`process.env.REACT_APP_ID_CHARACTER${1}`, (req, rest, ctx) => {
+  rest.get(`${process.env.REACT_APP_ID_CHARACTER}${1}`, (req, rest, ctx) => {
     return rest(ctx.status(404));
   }),
 ];

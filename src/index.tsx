@@ -6,7 +6,7 @@ import ReactDOM from "react-dom/client";
 import CharactersContextProvider from "./store/contexts/characters/CharactersContextProvider";
 import GlobalStyles from "./styles/GlobalStyles";
 import UiContextProvider from "./store/contexts/ui/UiContextProvider";
-import router from "./router/router";
+import { router } from "./routes/routes";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

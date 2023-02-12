@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import { mockStore, mockUiStoreTrue } from "../../mocks/store";
 import { Wrapper } from "../../mocks/Wrapper";
 import Layout from "./Layout";
@@ -11,7 +12,8 @@ describe("Given a Layout component", () => {
   render(
     <Wrapper charactersStore={store} uiStore={uiStore}>
       <Layout />
-    </Wrapper>
+    </Wrapper>,
+    { wrapper: BrowserRouter }
   );
   describe("When rendered", () => {
     test("Then it should show a header with the text `rick and morty - wiki`", () => {
