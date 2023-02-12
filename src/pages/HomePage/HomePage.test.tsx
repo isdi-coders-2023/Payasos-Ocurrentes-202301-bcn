@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { mockStore, mockUiStore } from "../../mocks/store";
 import { Wrapper } from "../../mocks/Wrapper";
 import HomePage from "./HomePage";
@@ -34,6 +35,32 @@ describe("Given a HomePage component", () => {
       const resultedName = screen.getByText(expectedName);
 
       expect(resultedName).toBeInTheDocument();
+    });
+  });
+
+  describe("When rendered", () => {
+    test("Then it should show two buttons with the text `Previous` and `Next` that should be clickeable", () => {
+      const expectedButtonPrevText = "Previous";
+      const expectedButtonNextText = "Next";
+
+      render(
+        <Wrapper charactersStore={store} uiStore={uiStore}>
+          <HomePage></HomePage>
+        </Wrapper>
+      );
+
+      const previousButton = screen.getByRole("button", {
+        name: expectedButtonPrevText,
+      });
+      const nextButton = screen.getByRole("button", {
+        name: expectedButtonNextText,
+      });
+
+      userEvent.click(previousButton);
+      userEvent.click(nextButton);
+
+      expect(previousButton).toBeInTheDocument();
+      expect(nextButton).toBeInTheDocument();
     });
   });
 });
