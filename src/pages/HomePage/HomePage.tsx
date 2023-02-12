@@ -18,7 +18,7 @@ const HomePage = (): JSX.Element => {
   return (
     <>
       <HomePageStyled>
-        <h1>Characters</h1>
+        {!isLoading && <h1>Characters</h1>}
         {!isLoading && <CharactersList characters={characters} />}
       </HomePageStyled>
     </>

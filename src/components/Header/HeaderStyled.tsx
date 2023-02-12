@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const HeaderStyled = styled.div`
+  z-index: 1;
   .header-container {
     display: flex;
     justify-content: center;

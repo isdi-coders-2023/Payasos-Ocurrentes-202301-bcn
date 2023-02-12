@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import GlobalStyles from "../../styles/GlobalStyles";
 import ErrorPage from "./ErrorPage";
 
@@ -12,7 +13,8 @@ describe("Given a ErrorPage component", () => {
         <>
           <GlobalStyles />
           <ErrorPage />
-        </>
+        </>,
+        { wrapper: BrowserRouter }
       );
 
       const error = screen.getByText(expectedError);

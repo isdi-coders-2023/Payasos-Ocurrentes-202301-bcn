@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import { CharacterStructure } from "../../data/types";
 import CharactersContextProvider from "../../store/contexts/characters/CharactersContextProvider";
 import Character from "./Character";
@@ -21,7 +22,7 @@ describe("Given a card Character component", () => {
         image: "",
       };
 
-      render(<Character character={character} />);
+      render(<Character character={character} />, { wrapper: BrowserRouter });
 
       const expectedResult = "Morty Smith";
 
@@ -57,7 +58,8 @@ describe("Given a Character provider", () => {
       render(
         <CharactersContextProvider>
           <Character character={character}></Character>
-        </CharactersContextProvider>
+        </CharactersContextProvider>,
+        { wrapper: BrowserRouter }
       );
 
       const result = screen.getByRole("heading", { level: 2 });
@@ -86,7 +88,7 @@ describe("Given a card Character component with a large name title", () => {
       };
       const className = "character-card__title-characters--smallTitle";
 
-      render(<Character character={character} />);
+      render(<Character character={character} />, { wrapper: BrowserRouter });
 
       const expectedResult = screen.getByRole("heading", { level: 2 });
 

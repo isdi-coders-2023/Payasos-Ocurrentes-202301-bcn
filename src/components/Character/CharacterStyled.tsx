@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const CharacterStyled = styled.div`
+  a {
+    text-decoration: none;
+  }
   .character-card {
     width: 300px;
     height: 450px;

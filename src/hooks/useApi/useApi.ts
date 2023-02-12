@@ -38,15 +38,14 @@ const useApi = () => {
         uiDispatch(setIsLoadingActionCreator());
 
         const singleCharacterResponse = await fetch(
-          `process.env.REACT_APP_ID_CHARACTER${id}`
+          `${process.env.REACT_APP_ID_CHARACTER}${id}`
         );
 
         const singleCharacter =
           (await singleCharacterResponse.json()) as CharacterStructure;
 
-        uiDispatch(unsetIsLoadingActionCreator());
-
         dispatch(loadCharacterActionCreator(singleCharacter));
+        uiDispatch(unsetIsLoadingActionCreator());
       } catch (error) {
         return (error as Error).message;
       }
