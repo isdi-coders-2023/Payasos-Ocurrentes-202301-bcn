@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 const HomePageStyled = styled.div`
-  position: relative;
-  color: #fff;
-  h1 {
-    padding-bottom: 20px;
+  .main-title {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px 20px 0;
     font-size: 3rem;
   }
 `;
