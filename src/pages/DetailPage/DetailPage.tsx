@@ -21,6 +21,11 @@ export const DetailPage = (): JSX.Element => {
     },
   } = useContext(CharactersContext);
 
+  const controlHorizontalOVerflow = () => {
+    const locationLength = 11;
+    return location.name.length > locationLength ? "overFlowX" : "";
+  };
+
   return (
     <DetailPageStyled>
       {!isLoading && (
@@ -53,7 +58,9 @@ export const DetailPage = (): JSX.Element => {
               <span className="detail-info-container__data--origin">
                 {origin.name}
               </span>
-              <span className="detail-info-container__data--location">
+              <span
+                className={`detail-info-container__data--location ${controlHorizontalOVerflow()}`}
+              >
                 {location.name}
               </span>
             </div>
