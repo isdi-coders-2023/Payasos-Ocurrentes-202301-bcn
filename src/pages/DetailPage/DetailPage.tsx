@@ -25,36 +25,38 @@ export const DetailPage = (): JSX.Element => {
     <DetailPageStyled>
       {!isLoading && (
         <>
-          <img
-            src={image}
-            alt={name}
-            className="detail-image"
-            width="300"
-            height="300"
-          />
-          <h2 className="detail-title">{name}</h2>
-          <div className="detail-info-container">
-            <span className="detail-info-container__titles">Status</span>
-            <span className="detail-info-container__titles">Species</span>
-            <span className="detail-info-container__titles">Gender</span>
-            <span className="detail-info-container__titles">Origin</span>
-            <span className="detail-info-container__titles">Location</span>
+          <div className="container-detail-page">
+            <img
+              src={image}
+              alt={name}
+              className="detail-image"
+              width="300"
+              height="300"
+            />
+            <h2 className="detail-title">{name}</h2>
+            <div className="detail-info-container">
+              <span className="detail-info-container__titles">Status</span>
+              <span className="detail-info-container__titles">Species</span>
+              <span className="detail-info-container__titles">Gender</span>
+              <span className="detail-info-container__titles">Origin</span>
+              <span className="detail-info-container__titles">Location</span>
 
-            <span className="detail-info-container__data--status">
-              {status}
-            </span>
-            <span className="detail-info-container__data--species">
-              {species}
-            </span>
-            <span className="detail-info-container__data--gender">
-              {gender}
-            </span>
-            <span className="detail-info-container__data--origin">
-              {origin.name}
-            </span>
-            <span className="detail-info-container__data--location">
-              {location.name}
-            </span>
+              <span className="detail-info-container__data--status">
+                {status}
+              </span>
+              <span className="detail-info-container__data--species">
+                {species}
+              </span>
+              <span className="detail-info-container__data--gender">
+                {gender}
+              </span>
+              <span className="detail-info-container__data--origin">
+                {origin.name}
+              </span>
+              <span className="detail-info-container__data--location">
+                {location.name}
+              </span>
+            </div>
           </div>
         </>
       )}
