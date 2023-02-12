@@ -12,17 +12,18 @@ const HeaderStyled = styled.div`
   }
 
   .header-container__span {
+    text-align: center;
     color: #fff;
     font-size: 1.6rem;
     white-space: nowrap;
   }
 
   .navbar {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 1.8rem;
     padding: 20px 0 20px;
+    gap: 107px;
   }
 
   i {

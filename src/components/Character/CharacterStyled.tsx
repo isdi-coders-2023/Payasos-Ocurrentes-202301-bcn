@@ -7,6 +7,8 @@ const CharacterStyled = styled.div`
   .character-card {
     width: 300px;
     height: 450px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+      rgba(0, 0, 0, 0.22) 0px 10px 10px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
