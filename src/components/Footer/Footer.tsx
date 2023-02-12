@@ -7,6 +7,8 @@ const Footer = (): JSX.Element => {
         src="Rick&MortyImages/Rick_and_Morty.svg.webp"
         alt="Rick and Morty footer"
         aria-label="Rick and Morty Footer"
+        width="320"
+        height="88"
       />
     </FooterStyled>
   );
