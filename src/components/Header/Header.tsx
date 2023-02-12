@@ -44,7 +44,7 @@ const Header = (): JSX.Element => {
             <i className="fa-regular fa-heart"></i>
           </Link>
           <Link
-            to="creativity-zone"
+            to="create-character"
             className="navbar__anchor"
             aria-label="Creativity Zone link"
           >

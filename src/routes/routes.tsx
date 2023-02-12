@@ -20,7 +20,7 @@ export const routes = [
         element: <DetailPage />,
       },
       {
-        path: "create",
+        path: "create-character",
         element: <CreateCharacterPage />,
       },
     ],

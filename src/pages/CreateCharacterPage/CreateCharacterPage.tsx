@@ -8,8 +8,8 @@ const CreateCharacterPage = (): JSX.Element => {
       <img
         src="./Rick&MortyImages/Rick&MortyTogether.png"
         alt="Rick and Morty melt into a tender embrace"
-        width="320"
-        height="310"
+        width="300"
+        height="280"
       />
       <Form />
     </CreateCharacterPageStyled>
