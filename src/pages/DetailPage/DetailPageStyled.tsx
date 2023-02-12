@@ -14,8 +14,8 @@ const DetailPageStyled = styled.div`
 
   .detail-title {
     color: #fff;
-    padding-right: 100px;
-    white-space: nowrap;
+    padding-right: 105px;
+    max-width: 300px;
   }
 
   .detail-image {
