@@ -27,14 +27,15 @@ const DetailPageStyled = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 15px;
     max-width: 300px;
+    text-overflow: ellipsis;
 
     &__titles {
       color: #858584;
-      font-size: 25px;
+      font-size: 28px;
     }
 
     &__data--status {
-      font-size: 25px;
+      font-size: 28px;
       color: white;
       grid-column: 2 / 2;
       grid-row: 1 / 5;

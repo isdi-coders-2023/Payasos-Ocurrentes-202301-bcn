@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { useContext } from "react";
 import Header from "../Header/Header";
 import Loader from "../Loader/Loader";
@@ -14,6 +14,9 @@ const Layout = (): JSX.Element => {
         {isLoading && <Loader />}
         <Outlet />
       </main>
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/home" />} />
+      </Routes>
     </>
   );
 };
