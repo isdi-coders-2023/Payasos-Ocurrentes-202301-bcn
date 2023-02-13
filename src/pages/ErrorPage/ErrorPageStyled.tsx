@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ErrorPageStyled = styled.div`
+const ErrorPageStyled = styled.section`
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -13,7 +13,7 @@ const ErrorPageStyled = styled.div`
   bottom: 0;
   left: 0;
   z-index: -1;
-
+  padding: 20px;
   .error-404 {
     font-size: 4rem;
   }
