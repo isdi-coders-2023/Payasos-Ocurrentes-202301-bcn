@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 const HeaderStyled = styled.div`
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .header-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     gap: 15px;
     margin-bottom: 15px;
@@ -15,15 +17,13 @@ const HeaderStyled = styled.div`
     text-align: center;
     color: #fff;
     font-size: 1.6rem;
-    white-space: nowrap;
   }
 
   .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 1.8rem;
     padding: 20px 0 20px;
-    gap: 107px;
   }
 
   i {
