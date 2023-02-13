@@ -13,6 +13,7 @@ const ErrorPageStyled = styled.div`
   bottom: 0;
   left: 0;
   z-index: -1;
+  padding: 0 60px;
 
   .error-404 {
     font-size: 4rem;
