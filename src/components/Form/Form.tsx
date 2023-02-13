@@ -46,7 +46,7 @@ const Form = (): JSX.Element => {
           />
 
           <button type="submit" aria-label="Send button">
-            modify
+            Create character
           </button>
         </form>
       </div>

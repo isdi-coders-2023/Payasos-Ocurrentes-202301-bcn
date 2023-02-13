@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 const FormStyled = styled.div`
+  display: flex;
+  justify-content: center;
+
   .container__form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 352px;
     gap: 15px;
   }
 
